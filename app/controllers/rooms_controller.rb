@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   end
 
   def index
+   
   end
 
    
@@ -15,6 +16,14 @@ class RoomsController < ApplicationController
       render :new
     end
   end
+
+
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
+  end
+
 
   private
 
